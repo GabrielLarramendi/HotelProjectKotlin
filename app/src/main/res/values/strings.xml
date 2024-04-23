@@ -7,5 +7,8 @@
     <string name="action_new_hotel">Novo Hotel</string>
     <string name="action_info">Info</string>
     <string name="hint_search">Procurar por Hotel</string>
+    <string name="about_title">App Hotéis em Maceió</string>
+    <string name="about_message">Projeto de estudos desenvolvido por Gabriel Larramendi</string>
+    <string name="about_button_site">Site</string>
 
 </resources>

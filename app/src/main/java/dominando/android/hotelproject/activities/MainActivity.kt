@@ -8,6 +8,7 @@ import android.view.MenuItem
 import androidx.appcompat.widget.SearchView
 
 import dominando.android.hotelproject.R
+import dominando.android.hotelproject.fragments.AboutDialogFragment
 import dominando.android.hotelproject.fragments.HotelDetailsFragment
 import dominando.android.hotelproject.fragments.HotelListFragment
 import dominando.android.hotelproject.model.Hotel
@@ -72,6 +73,9 @@ class MainActivity : AppCompatActivity(),
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item?.itemId) {
+            R.id.action_info -> AboutDialogFragment().show(supportFragmentManager, "sobre")
+        }
         return super.onOptionsItemSelected(item)
     }
 
