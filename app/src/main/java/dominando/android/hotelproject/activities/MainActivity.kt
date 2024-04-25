@@ -10,13 +10,16 @@ import androidx.appcompat.widget.SearchView
 import dominando.android.hotelproject.R
 import dominando.android.hotelproject.fragments.AboutDialogFragment
 import dominando.android.hotelproject.fragments.HotelDetailsFragment
+import dominando.android.hotelproject.fragments.HotelFormFragment
 import dominando.android.hotelproject.fragments.HotelListFragment
 import dominando.android.hotelproject.model.Hotel
 
 class MainActivity : AppCompatActivity(),
     HotelListFragment.OnHotelClickListener,
     androidx.appcompat.widget.SearchView.OnQueryTextListener,
-    MenuItem.OnActionExpandListener {
+    MenuItem.OnActionExpandListener,
+    HotelFormFragment.OnHotelSavedListener
+{
 
     private var lastSearchTerm: String = ""
     private var searchView: SearchView? = null
@@ -73,8 +76,9 @@ class MainActivity : AppCompatActivity(),
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item?.itemId) {
+        when (item.itemId) {
             R.id.action_info -> AboutDialogFragment().show(supportFragmentManager, "sobre")
+            R.id.action_new -> HotelFormFragment.newInstance().open(supportFragmentManager)
         }
         return super.onOptionsItemSelected(item)
     }
@@ -93,6 +97,10 @@ class MainActivity : AppCompatActivity(),
         lastSearchTerm = ""
         listFragment.clearSearch()
         return true
+    }
+
+    override fun onHotelSaved(hotel: Hotel) {
+        listFragment.search(lastSearchTerm)
     }
 
 

@@ -2,13 +2,17 @@
     <string name="app_name">HotelProject</string>
 
     <string name="error_hotel_not_found">Hotel não encontrado</string>
+    <string name="error_invalid_hotel">Hotel não preenchido corretamente</string>
     
     <string name="action_search">Pesquisar</string>
-    <string name="action_new_hotel">Novo Hotel</string>
+    <string name="action_new_hotel">Novo Hotel</string>Ale
     <string name="action_info">Info</string>
     <string name="hint_search">Procurar por Hotel</string>
     <string name="about_title">App Hotéis em Maceió</string>
     <string name="about_message">Projeto de estudos desenvolvido por Gabriel Larramendi</string>
     <string name="about_button_site">Site</string>
+    <string name="form_label_name">Nome</string>
+    <string name="form_label_address">Endereço</string>
+    <string name="form_label_rating">Classificação</string>
 
 </resources>
